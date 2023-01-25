@@ -1,0 +1,5 @@
+config SHIELD_CIRQUETRACKPAD
+    def_bool $(shields_list_contains,cirquetrackpad)
+
+config SHIELD_PIMTRACKBALL
+    def_bool $(shields_list_contains,pimtrackball)

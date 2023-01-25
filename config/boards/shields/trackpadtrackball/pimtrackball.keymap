@@ -1,0 +1,19 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+                // ROW A FROM SCHEMATIC FILE
+                // ROW A FROM SCHEMATIC FILE
+                // ROW A FROM SCHEMATIC FILE
+        default_layer {
+            bindings = <
+                &mouse LCLK
+                &mouse RCLK
+                &mouse MCLK
+           >;
+        };
+    };
+};
