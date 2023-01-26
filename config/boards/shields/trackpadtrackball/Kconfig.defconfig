@@ -1,16 +1,6 @@
 if SHIELD_CIRQUETRACKPAD
 
 config ZMK_KEYBOARD_NAME
-    default "Wearable Mouse"
-
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-endif
-
-if SHIELD_CIRQUETRACKPAD || SHIELD_PIMTRACKBALL
-
-config ZMK_SPLIT
-    default y
+    default "Cirque Trackpad"
 
 endif

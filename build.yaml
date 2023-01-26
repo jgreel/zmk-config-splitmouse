@@ -15,5 +15,3 @@
 include:
   - board: seeeduino_xiao_ble
     shield: cirquetrackpad
-  - board: seeeduino_xiao_ble
-    shield: pimtrackball
