@@ -1,10 +1,10 @@
 manifest:
   remotes:
-    - name: crides
-      url-base: https://github.com/crides
+    - name: jgreel
+      url-base: https://github.com/jgreel
   projects:
     - name: zmk
-      remote: crides
+      remote: jgreel
       revision: cirque-trackpad
       import: app/west.yml
   self:
