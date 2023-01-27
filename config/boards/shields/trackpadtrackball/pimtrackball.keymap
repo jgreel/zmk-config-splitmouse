@@ -12,7 +12,7 @@
             bindings = <
                 &mouse LCLK
                 &mouse RCLK
-                &mouse MCLK
+                /*&mouse MCLK*/
            >;
         };
     };
