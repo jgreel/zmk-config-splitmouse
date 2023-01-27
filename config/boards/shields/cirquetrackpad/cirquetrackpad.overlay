@@ -1,7 +1,5 @@
 // cirquetrackpad.overlay
 
-#include <drivers/sensor/cirque_trackpad/cirque_trackpad.h>
-
 / {
     chosen {
         zmk,kscan = &default_kscan;
