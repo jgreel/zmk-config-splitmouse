@@ -1,10 +1,10 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+    - name: jgreel
+      url-base: https://github.com/jgreel
   projects:
     - name: zmk
-      remote: zmkfirmware
+      remote: jgreel
       revision: main
       import: app/west.yml
   self:

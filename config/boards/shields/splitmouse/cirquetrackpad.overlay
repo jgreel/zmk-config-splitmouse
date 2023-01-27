@@ -1,6 +1,6 @@
 // cirquetrackpad.overlay
 
-#include "trackpadtrackball.dtsi" // Notice that the main dtsi files are included in the overlay.
+#include "splitmouse.dtsi" // Notice that the main dtsi files are included in the overlay.
 
 &default_kscan {
     row-gpios
@@ -8,10 +8,9 @@
         ;
 };
 
-//```devicetree
-&xiao_i2c {
+&xiao_i2c0 {
 	status = "okay";
-	trackpad@2 {
+	cirque_trackpad@2A {
 		compatible = "cirque,pinnacle";
 		reg = <0x2A>;
 		label = "Cirque_Trackpad";
@@ -22,4 +21,3 @@
 		//no-taps;
 	};
 };
-//```

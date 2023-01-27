@@ -1,6 +1,6 @@
 // pimtrackball.overlay
 
-#include "TrackpadTrackball.dtsi" // Notice that the main dtsi files are included in the overlay.
+#include "splitmouse.dtsi" // Notice that the main dtsi files are included in the overlay.
 #include <dt-bindings/zmk/trackball_pim447.h> // for PIM447_MOVE and PIM447_SCROLL constants
 
 &default_kscan {
@@ -9,8 +9,7 @@
         ;
 };
 
-//```devicetree
-&xiao_i2c {
+&xiao_i2c0 {
 	status = "okay";
 	trackball_pim447@a {
 		compatible = "pimoroni,trackball_pim447";
@@ -28,4 +27,3 @@
 		mode = <PIM447_SCROLL>; // Act as mouse wheels at startup (default: PIM447_MOVE for a pointer)
 	};
 };
-//```
