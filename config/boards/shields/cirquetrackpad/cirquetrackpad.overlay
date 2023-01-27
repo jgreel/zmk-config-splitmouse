@@ -1,5 +1,7 @@
 // cirquetrackpad.overlay
 
+#include <drivers/sensor.h>
+
 / {
     chosen {
         zmk,kscan = &default_kscan;
@@ -21,7 +23,7 @@
 //```devicetree
 &xiao_i2c {
 	status = "okay";
-	trackpad@2A {
+	cirque_trackpad@2A {
 		compatible = "cirque,pinnacle";
 		reg = <0x2A>;
 		label = "Cirque_Trackpad";
