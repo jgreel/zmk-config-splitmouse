@@ -21,7 +21,7 @@
 };
 
 //```devicetree
-&xiao_i2c {
+&xiao_i2c0 {
 	status = "okay";
 	cirque_trackpad@2A {
 		compatible = "cirque,pinnacle";
