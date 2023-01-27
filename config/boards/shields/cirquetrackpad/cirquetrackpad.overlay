@@ -1,6 +1,7 @@
 // cirquetrackpad.overlay
 
-#include <drivers/sensor.h>
+//Uncomment when removing CMakeLists and cirque_trackpad.c
+// #include <drivers/sensor.h>
 
 / {
     chosen {
