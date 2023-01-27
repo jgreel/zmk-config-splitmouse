@@ -1,6 +1,6 @@
 // cirquetrackpad.overlay
 
-#include <drivers/sensor.h>
+#include <drivers/sensor/cirque_trackpad.h>
 
 / {
     chosen {
