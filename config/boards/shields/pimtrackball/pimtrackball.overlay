@@ -19,7 +19,7 @@
     };
 };
 
-&xiao_i2c0 {
+&xiao_i2c {
 	status = "okay";
 	trackball_pim447@a {
 		compatible = "pimoroni,trackball_pim447";
