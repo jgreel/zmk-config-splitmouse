@@ -17,23 +17,23 @@
             //, <&xiao_d D9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row C from the schematic file
             ;
     };
+};
 
-	&xiao_i2c0 {
-		status = "okay";
-		trackball_pim447@a {
-			compatible = "pimoroni,trackball_pim447";
-			reg = <0xa>;
-			label = "TRACKBALL_PIM447";
-			
-			move-factor = <1>;      // Increase pointer velocity (default: 1)
-			//invert-move-x;          // Invert pointer X axis (left is right, and vice versa)
-			//invert-move-y;          // Invert pointer Y axis (up is down, and vice versa)
-			button = <2>;           // Send right-click when pressing the ball (default: 0 = left click, 1 = right click, 2 = middle click?)
-			//swap-axes;              // Swap X and Y axes (horizontal is vertical, and vice versa)
-			scroll-divisor = <1>;   // Increase wheel velocity (default: 2)
-			//invert-scroll-x;        // Invert wheel X axis (left is right, and vice versa)
-			//invert-scroll-y;        // Invert wheel Y axis (up is down, and vice versa)
-			mode = <PIM447_SCROLL>; // Act as mouse wheels at startup (default: PIM447_MOVE for a pointer)
-		};
+&xiao_i2c0 {
+	status = "okay";
+	trackball_pim447@a {
+		compatible = "pimoroni,trackball_pim447";
+		reg = <0xa>;
+		label = "TRACKBALL_PIM447";
+		
+		move-factor = <1>;      // Increase pointer velocity (default: 1)
+		//invert-move-x;          // Invert pointer X axis (left is right, and vice versa)
+		//invert-move-y;          // Invert pointer Y axis (up is down, and vice versa)
+		button = <2>;           // Send right-click when pressing the ball (default: 0 = left click, 1 = right click, 2 = middle click?)
+		//swap-axes;              // Swap X and Y axes (horizontal is vertical, and vice versa)
+		scroll-divisor = <1>;   // Increase wheel velocity (default: 2)
+		//invert-scroll-x;        // Invert wheel X axis (left is right, and vice versa)
+		//invert-scroll-y;        // Invert wheel Y axis (up is down, and vice versa)
+		mode = <PIM447_SCROLL>; // Act as mouse wheels at startup (default: PIM447_MOVE for a pointer)
 	};
 };
