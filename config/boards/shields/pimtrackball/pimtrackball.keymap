@@ -10,8 +10,8 @@
                 // ROW A FROM SCHEMATIC FILE
         default_layer {
             bindings = <
-                &mouse LCLK
-                &mouse RCLK
+                &mo LCLK
+                &mo RCLK
                 /*&mouse MCLK*/
            >;
         };
