@@ -26,14 +26,23 @@
 		reg = <0xa>;
 		label = "TRACKBALL_PIM447";
 		
-		move-factor = <1>;      // Increase pointer velocity (default: 1)
+		//move-factor = <1>;      // Increase pointer velocity (default: 1); used by cdc-mkb branch 
+		move-factor-x = <200>;	// used by voidyourwarranty branch, default 11
+		move-factor-y = <200>;	// used by voidyourwarranty branch, default 100
+		move-inertia-x = <1>;	// used by voidyourwarranty branch, default 0
+		move-inertia-y = <1>;	// used by voidyourwarranty branch, default 0
 		//invert-move-x;          // Invert pointer X axis (left is right, and vice versa)
 		//invert-move-y;          // Invert pointer Y axis (up is down, and vice versa)
 		button = <2>;           // Send right-click when pressing the ball (default: 0 = left click, 1 = right click, 2 = middle click?)
 		//swap-axes;              // Swap X and Y axes (horizontal is vertical, and vice versa)
+		//poll-interval = <50>;	//used by voidyourwarranty branch, default 50
 		scroll-divisor = <1>;   // Increase wheel velocity (default: 2)
 		//invert-scroll-x;        // Invert wheel X axis (left is right, and vice versa)
 		//invert-scroll-y;        // Invert wheel Y axis (up is down, and vice versa)
 		mode = <PIM447_SCROLL>; // Act as mouse wheels at startup (default: PIM447_MOVE for a pointer)
+		//norm	= <1>;			// voidyourwarranty branch, not sure what does
+		//exactness = <4>;		// voidyourwarranty branch, not sure what does
+		//max-accel = <100>;	// voidyourwarranty branch, not sure what does
+		//power-layer = <0>;	// voidyourwarranty branch, makes track ball driver and 3V3 power output of the Nice!Nano (not sure about other MCU) depend on given layer
 	};
 };
