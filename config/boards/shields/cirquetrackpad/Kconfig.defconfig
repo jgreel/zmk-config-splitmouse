@@ -3,7 +3,4 @@ if SHIELD_CIRQUETRACKPAD
 config ZMK_KEYBOARD_NAME
     default "Cirque Trackpad"
 
-config I2C
-    default y
-
 endif
