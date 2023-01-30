@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/bt.h>
 
 / {
     keymap {
@@ -10,8 +11,9 @@
                 // ROW A FROM SCHEMATIC FILE
         default_layer {
             bindings = <
-                &mo LCLK
+                /*&mo LCLK */
                 &mo RCLK
+                &bt BT_CLR
                 /*&mouse MCLK*/
            >;
         };
