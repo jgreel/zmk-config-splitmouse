@@ -1,6 +1,6 @@
 // pimtrackball.overlay
 
-#include <dt-bindings/zmk/trackball_pim447.h> // for PIM447_MOVE and PIM447_SCROLL constants
+//#include <dt-bindings/zmk/trackball_pim447.h> // for PIM447_MOVE and PIM447_SCROLL constants
 
 / {
     chosen {
@@ -19,6 +19,7 @@
     };
 };
 
+/*
 &xiao_i2c {
 	status = "okay";
 	trackball_pim447@a {
@@ -48,3 +49,4 @@
 		//power-layer = <0>;	// voidyourwarranty branch, makes track ball driver and 3V3 power output of the Nice!Nano (not sure about other MCU) depend on given layer
 	};
 };
+*/

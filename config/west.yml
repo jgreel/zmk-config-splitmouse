@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: jgreel
-      revision: devel-mouse-pim447
+      revision: main
       import: app/west.yml
   self:
     path: config
