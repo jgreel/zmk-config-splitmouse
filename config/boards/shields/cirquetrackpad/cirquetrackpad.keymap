@@ -26,7 +26,7 @@
                 /* &bt BT_NXT */
                 /* &bt BT_CLR */
                 /* &out    OUT_TOG */
-                &mo RCLK
+                &mkp RCLK
            >;
         };
     };
