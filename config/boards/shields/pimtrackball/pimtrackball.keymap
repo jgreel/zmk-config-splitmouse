@@ -11,10 +11,10 @@
                 // ROW A FROM SCHEMATIC FILE
         default_layer {
             bindings = <
-                /*&mo LCLK */
-                &mo RCLK
+                /*&mkp LCLK */
+                &mkp RCLK
                 &bt BT_CLR
-                /*&mouse MCLK*/
+                /*&mkp MCLK*/
            >;
         };
     };
