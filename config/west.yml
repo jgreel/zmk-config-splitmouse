@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: jgreel
-      revision: mouse-3.2-cirque
+      revision: mouse-ftc-cirque
       import: app/west.yml
   self:
     path: config
