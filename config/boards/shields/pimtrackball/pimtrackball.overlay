@@ -27,7 +27,7 @@
 		label = "TRACKBALL_PIM447";
 		
 		//move-factor = <1>;      // Increase pointer velocity (default: 1); used by cdc-mkb branch 
-		move-factor-x = <200>;	// used by voidyourwarranty branch, default 11
+		move-factor-x = <200>;	// used by voidyourwarranty branch, default 100
 		move-factor-y = <200>;	// used by voidyourwarranty branch, default 100
 		move-inertia-x = <1>;	// used by voidyourwarranty branch, default 0
 		move-inertia-y = <1>;	// used by voidyourwarranty branch, default 0
@@ -37,10 +37,10 @@
 		//swap-axes;              // Swap X and Y axes (horizontal is vertical, and vice versa)
 		//poll-interval = <50>;	//used by voidyourwarranty branch, default 50
 		//scroll-divisor = <1>;   // Increase wheel velocity (default: 2); used by cdc-mkb branch
-		scroll-divisor-x = <1>;	// Increase wheel velocity (default: 2); used by voidyourwarranty branch 
-		scroll-divisor-y = <1>;	// Increase wheel velocity (default: 2); used by voidyourwarranty branch 
-		//invert-scroll-x;        // Invert wheel X axis (left is right, and vice versa)
-		//invert-scroll-y;        // Invert wheel Y axis (up is down, and vice versa)
+		scroll-divisor-x = <2>;	// Increase wheel velocity (default: 2); used by voidyourwarranty branch 
+		scroll-divisor-y = <2>;	// Increase wheel velocity (default: 2); used by voidyourwarranty branch 
+		invert-scroll-x;        // Invert wheel X axis (left is right, and vice versa)
+		invert-scroll-y;        // Invert wheel Y axis (up is down, and vice versa)
 		mode = <PIM447_SCROLL>; // Act as mouse wheels at startup (default: PIM447_MOVE for a pointer)
 		//norm	= <1>;			// voidyourwarranty branch, not sure what does
 		//exactness = <4>;		// voidyourwarranty branch, not sure what does
