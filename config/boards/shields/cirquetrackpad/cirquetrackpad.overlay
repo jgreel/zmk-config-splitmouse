@@ -1,7 +1,5 @@
 // cirquetrackpad.overlay
 
-// #include <drivers/sensor.h>
-
 / {
     chosen {
         zmk,kscan = &default_kscan;
@@ -27,8 +25,7 @@
 	    reg = <0x2a>;
 	    label = "Cirque_Trackpad";
         dr-gpios = <&xiao_d	3	GPIO_ACTIVE_HIGH>;
-	    //invert-x;
-	    //invert-y;
+	    //rotate-90;
 	    //sleep;
 	    //no-taps;
     };

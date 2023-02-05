@@ -23,10 +23,10 @@
                 // ROW A FROM SCHEMATIC FILE
                 // ROW A FROM SCHEMATIC FILE
             bindings = <
-                /* &bt BT_NXT */
+                &bt BT_NXT
                 /* &bt BT_CLR */
                 /* &out    OUT_TOG */
-                &mkp RCLK
+                /* &mkp RCLK */
            >;
         };
     };
