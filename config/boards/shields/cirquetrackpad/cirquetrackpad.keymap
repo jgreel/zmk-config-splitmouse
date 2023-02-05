@@ -41,7 +41,7 @@
                 /* &bt BT_CLR */
                 /* &out    OUT_TOG */
                 /* &mkp RCLK */
-                &lkt RCLK SCROLL
+                &lkt RCLK SCROLL_LAYER
            >;
         };
 
@@ -50,7 +50,7 @@
                 // ROW A FROM SCHEMATIC FILE
                 // ROW A FROM SCHEMATIC FILE
             bindings = <
-                &lkt RCLK SCROLL
+                &lkt RCLK SCROLL_LAYER
            >;
         };
     };
