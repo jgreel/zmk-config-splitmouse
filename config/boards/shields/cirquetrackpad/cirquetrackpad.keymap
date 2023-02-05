@@ -18,14 +18,16 @@
     };
     */
 
-    blt: layer_bt_tap{
+    behaviors   {
+    lkt: layer_key_tap{
         compatible = "zmk,behavior-hold-tap";
-        label = "LAYER BLUETOOTH TAP";
+        label = "LAYER KEY TAP";
         #binding-cells = <2>;
         tapping-term-ms = <150>;
         flavor = "tap-preferred";
-        bindings = <&bt BT_CLR &tog SCROLL>;
+        bindings = <&mkp>, <&tog>;
         };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -39,7 +41,7 @@
                 /* &bt BT_CLR */
                 /* &out    OUT_TOG */
                 /* &mkp RCLK */
-                &blt 0 0
+                &blt RCLK SCROLL
            >;
         };
 
@@ -48,7 +50,7 @@
                 // ROW A FROM SCHEMATIC FILE
                 // ROW A FROM SCHEMATIC FILE
             bindings = <
-                &blt 0 0
+                &blt RCLK SCROLL
            >;
         };
     };
