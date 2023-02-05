@@ -20,7 +20,7 @@
 
 &xiao_i2c {
     status = "okay";
-    cirque_trackpad@2a {
+    trackpad@2a {
 	    compatible = "cirque,pinnacle";
 	    reg = <0x2a>;
 	    label = "Cirque_Trackpad";

@@ -4,6 +4,9 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/mouse.h>
 
+#define DEFAULT     0
+#define SCROLL      1
+
 / {
     /*
     macros {
@@ -15,6 +18,15 @@
     };
     */
 
+    blt: layer_bt_tap{
+        compatible = "zmk,behavior-hold-tap";
+        label = "LAYER BLUETOOTH TAP";
+        #binding-cells = <2>;
+        tapping-term-ms = <150>;
+        flavor = "tap-preferred";
+        bindings = <&bt BT_CLR>, <&tog SCROLL>;
+        };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -24,9 +36,19 @@
                 // ROW A FROM SCHEMATIC FILE
             bindings = <
                 /* &bt BT_NXT */
-                &bt BT_CLR
+                /* &bt BT_CLR */
                 /* &out    OUT_TOG */
                 /* &mkp RCLK */
+                &blt 0 0
+           >;
+        };
+
+        scroll_layer {  //called by trackpad code to switch to scroll mode
+                // ROW A FROM SCHEMATIC FILE
+                // ROW A FROM SCHEMATIC FILE
+                // ROW A FROM SCHEMATIC FILE
+            bindings = <
+                &blt 0 0
            >;
         };
     };
