@@ -4,8 +4,8 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/mouse.h>
 
-#define DEFAULT     0
-#define SCROLL      1
+#define DEFAULT_LAYER   0
+#define SCROLL_LAYER    1
 
 / {
     /*
@@ -24,7 +24,7 @@
         #binding-cells = <2>;
         tapping-term-ms = <150>;
         flavor = "tap-preferred";
-        bindings = <&bt BT_CLR>, <&tog SCROLL>;
+        bindings = <&bt BT_CLR &tog SCROLL>;
         };
 
     keymap {
