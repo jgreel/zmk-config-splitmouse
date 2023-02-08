@@ -25,7 +25,7 @@
         #binding-cells = <2>;
         tapping-term-ms = <150>;
         flavor = "tap-preferred";
-        bindings = <&mkp>, <&tog>;
+        bindings = <&bt>, <&tog>;
         };
     };
 
@@ -41,7 +41,7 @@
                 /* &bt BT_CLR */
                 /* &out    OUT_TOG */
                 /* &mkp RCLK */
-                &lkt RCLK SCROLL_LAYER
+                &lkt BT_NXT SCROLL_LAYER
            >;
         };
 
@@ -50,7 +50,7 @@
                 // ROW A FROM SCHEMATIC FILE
                 // ROW A FROM SCHEMATIC FILE
             bindings = <
-                &lkt RCLK SCROLL_LAYER
+                &lkt BT_NXT SCROLL_LAYER
            >;
         };
     };
