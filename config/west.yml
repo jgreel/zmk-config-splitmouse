@@ -1,11 +1,39 @@
 manifest:
+  defaults:
+    revision: v0.3
   remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
     - name: jgreel
       url-base: https://github.com/jgreel
+    - name: urob
+      url-base: https://github.com/urob
+    - name: petejohanson
+      url-base: https://github.com/petejohanson/
+    - name: halfdane
+      url-base: https://github.com/halfdane/
+    - name: oleksandrmaslov
+      url-base: https://github.com/oleksandrmaslov     
+    # Additional modules containing boards/shields/custom code can be listed here as well
   projects:
     - name: zmk
-      remote: jgreel
-      revision: mouse-ftc-cirque
+      remote: zmkfirmware
       import: app/west.yml
+    - name: cirque-input-module
+      remote: petejohanson
+      revision: main
+    - name: zmk-input-gestures
+      remote: halfdane
+      revision: main
+    # Add these if you want to use absolute mode:
+    #- name: zmk-input-processors
+    #  remote: halfdane
+    #  revision: main
+    #- name: cirque-input-module
+    #  remote: halfdane
+    #  revision: absolute_mode
+    - name: zmk-pointing-acceleration
+      remote: oleksandrmaslov
+      revision: main
   self:
     path: config

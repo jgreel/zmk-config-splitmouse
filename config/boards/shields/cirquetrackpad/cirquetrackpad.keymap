@@ -1,57 +1,21 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define DEFAULT_LAYER   0
 #define SCROLL_LAYER    1
 
 / {
-    /*
-    macros {
-        /*ZMK_MACRO(ble_nxt,
-            wait-ms = <1>;
-            tap-ms = <1>;
-            bindings = <&out OUT_BLE &bt BT_NXT>;
-        )
-    };
-    */
-
-    behaviors   {
-    lkt: layer_key_tap{
-        compatible = "zmk,behavior-hold-tap";
-        label = "LAYER KEY TAP";
-        #binding-cells = <2>;
-        tapping-term-ms = <150>;
-        flavor = "tap-preferred";
-        bindings = <&bt>, <&tog>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-                // ROW A FROM SCHEMATIC FILE
-                // ROW A FROM SCHEMATIC FILE
-                // ROW A FROM SCHEMATIC FILE
-            bindings = <
-                /* &bt BT_NXT */
-                /* &bt BT_CLR */
-                /* &out    OUT_TOG */
-                /* &mkp RCLK */
-                &lkt BT_NXT SCROLL_LAYER
-           >;
+
         };
 
         scroll_layer {  //called by trackpad code to switch to scroll mode
-                // ROW A FROM SCHEMATIC FILE
-                // ROW A FROM SCHEMATIC FILE
-                // ROW A FROM SCHEMATIC FILE
-            bindings = <
-                &lkt BT_NXT SCROLL_LAYER
-           >;
+
         };
     };
 };
