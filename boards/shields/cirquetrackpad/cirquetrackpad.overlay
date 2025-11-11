@@ -15,7 +15,7 @@
     default_kscan: kscan {
         compatible = "zmk,kscan-gpio-direct";
         row-gpios
-            = <&xiao_d D7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row A from the schematic file
+            = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row A from the schematic file
             ;
     };
 };
