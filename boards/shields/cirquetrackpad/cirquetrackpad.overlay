@@ -8,14 +8,15 @@
 
 / {
     chosen {
-        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &physical_layout0;
+        zmk,kscan = &default_kscan;
     };
 
-    mock_kscan: mock_kscan_0 {
-        compatible = "zmk,kscan-mock";
-        columns = <0>;
-        rows = <0>;
-        events = <0>;
+    default_kscan: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        row-gpios
+            = <&xiao_d D7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row A from the schematic file
+            ;
     };
 };
 
@@ -23,7 +24,6 @@
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
-        transform = <&default_transform>;
     };
 };
 
@@ -74,9 +74,9 @@
     input-type = <INPUT_EV_REL>;  // For relative input devices
     track-remainders;             // Accumulate fractional movements
     min-factor = <1000>;          // 0.8x at very slow speeds
-    max-factor = <20000>;         // 3.0x at fast speeds
+    max-factor = <3000>;         // 3.0x at fast speeds
     speed-threshold = <100>;     // counts/sec for 1x
-    speed-max = <500>;          // 6000 counts/sec for max accel
+    speed-max = <1000>;          // 6000 counts/sec for max accel
     acceleration-exponent = <2>;  // Quadratic acceleration curve
 };
 

@@ -11,11 +11,15 @@
         compatible = "zmk,keymap";
 
         default_layer {
-
+            bindings = <
+                &kp T
+           >;
         };
 
         scroll_layer {  //called by trackpad code to switch to scroll mode
-
+            bindings = <
+                &kp Y
+           >;
         };
     };
 };
