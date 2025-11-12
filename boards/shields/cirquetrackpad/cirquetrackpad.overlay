@@ -6,6 +6,7 @@
 #include <behaviors/input_gestures_accel.dtsi>
 #include <behaviors/input_processor_gestures.dtsi>
 #include <behaviors/input_processor_absolute_to_relative.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 / {
     chosen {
@@ -20,6 +21,20 @@
             ;
     };
 };
+
+/*
+/ {
+    input_processors {
+        absolute_transform: absolute_transform {
+            compatible = "zmk,input-processor-transform";
+            #input-processor-cells = <1>;
+            type = <INPUT_EV_ABS>;
+            x-codes = <INPUT_ABS_X>;
+            y-codes = <INPUT_ABS_Y>;
+        };
+    };
+};
+*/
 
 /*
 / {
@@ -93,7 +108,9 @@
         input-processors = <
             &zip_gestures
             &zip_absolute_to_relative
+            /*
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+            */
             &pointer_accel
             &zip_temp_layer 1 500
 	    	/*
