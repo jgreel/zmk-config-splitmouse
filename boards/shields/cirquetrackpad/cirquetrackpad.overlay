@@ -84,17 +84,17 @@
     //tap-timout-ms=<120>;
 
     inertial-cursor;
-    inertial-cursor-velocity-threshold=<2>;
+    inertial-cursor-velocity-threshold=<1>;
     inertial-cursor-decay-percent=<30>;
 };
 
 &pointer_accel {
     // https://github.com/oleksandrmaslov/zmk-pointing-acceleration
     
-    input-type = <INPUT_EV_REL>;  // For relative input devices
+    input-type = <INPUT_EV_ABS>;  // For relative input devices
     track-remainders;             // Accumulate fractional movements
-    min-factor = <600>;          // 0.8x at very slow speeds
-    max-factor = <2000>;         // 3.0x at fast speeds
+    min-factor = <300>;          // 0.8x at very slow speeds
+    max-factor = <1000>;         // 3.0x at fast speeds
     speed-threshold = <100>;     // counts/sec for 1x
     speed-max = <4000>;          // 6000 counts/sec for max accel
     acceleration-exponent = <2>;  // Quadratic acceleration curve
