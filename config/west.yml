@@ -34,6 +34,6 @@ manifest:
     #  revision: absolute_mode
     - name: zmk-pointing-acceleration
       remote: oleksandrmaslov
-      revision: main
+      revision: fixed
   self:
     path: config
