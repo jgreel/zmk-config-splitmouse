@@ -76,9 +76,9 @@
     input-type = <INPUT_EV_REL>;  // For relative input devices
     track-remainders;             // Accumulate fractional movements
     min-factor = <1000>;          // 0.8x at very slow speeds
-    max-factor = <3000>;         // 3.0x at fast speeds
+    max-factor = <4000>;         // 3.0x at fast speeds
     speed-threshold = <100>;     // counts/sec for 1x
-    speed-max = <6000>;          // 6000 counts/sec for max accel
+    speed-max = <5000>;          // 6000 counts/sec for max accel
     acceleration-exponent = <2>;  // Quadratic acceleration curve
 };
 
