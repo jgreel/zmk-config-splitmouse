@@ -79,7 +79,7 @@
     input-type = <INPUT_EV_REL>;  // For relative input devices
     track-remainders;             // Accumulate fractional movements
     min-factor = <600>;          // 0.8x at very slow speeds
-    max-factor = <4000>;         // 3.0x at fast speeds
+    max-factor = <2000>;         // 3.0x at fast speeds
     speed-threshold = <100>;     // counts/sec for 1x
     speed-max = <4000>;          // 6000 counts/sec for max accel
     acceleration-exponent = <2>;  // Quadratic acceleration curve
@@ -93,7 +93,7 @@
         input-processors = <
             &zip_gestures
             &zip_absolute_to_relative
-            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT)
+            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
             &pointer_accel
             &zip_temp_layer 1 500
 	    	/*
