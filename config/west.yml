@@ -19,19 +19,19 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
-    - name: cirque-input-module
-      remote: petejohanson
-      revision: main
+    #- name: cirque-input-module
+    #  remote: petejohanson
+    #  revision: main
     - name: zmk-input-gestures
       remote: halfdane
       revision: main
     # Add these if you want to use absolute mode:
-    #- name: zmk-input-processors
-    #  remote: halfdane
-    #  revision: main
-    #- name: cirque-input-module
-    #  remote: halfdane
-    #  revision: absolute_mode
+    - name: zmk-input-processors
+      remote: halfdane
+      revision: main
+    - name: cirque-input-module
+      remote: halfdane
+      revision: absolute_mode
     - name: zmk-pointing-acceleration
       remote: oleksandrmaslov
       revision: fixed
