@@ -2,7 +2,6 @@
 #include <physical_layouts.dtsi>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-/*#include <behaviors/input_gestures_accel.dtsi>*/
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
 / {
@@ -78,20 +77,6 @@ Mot (irq) - D5
         /* NOTE: apply this mode if you need 250Hz with direct USB connection. */
     };
 };
-
-/*
-&pointer_accel {
-    // https://github.com/oleksandrmaslov/zmk-pointing-acceleration
-    
-    input-type = <INPUT_EV_REL>;  // For relative input devices
-    track-remainders;             // Accumulate fractional movements
-    min-factor = <300>;          // 0.8x at very slow speeds
-    max-factor = <1000>;         // 3.0x at fast speeds
-    speed-threshold = <100>;     // counts/sec for 1x
-    speed-max = <4000>;          // 6000 counts/sec for max accel
-    acceleration-exponent = <2>;  // Quadratic acceleration curve
-};
-*/
 
 / {
     trackball0_listener: trackball0_listener {
