@@ -1,0 +1,113 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+#include <physical_layouts.dtsi>
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include <behaviors/input_gestures_accel.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+/ {
+    chosen {
+        //zmk,physical-layout = &physical_layout0;
+        zmk,kscan = &default_kscan;
+    };
+
+    default_kscan: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        input-gpios
+            = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row A from the schematic file
+            ;
+    };
+};
+
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 28)>, //P0.28 = xiao pin D2, high frequency
+                <NRF_PSEL(SPIM_MOSI, 0, 3)>, //P0.03 = xiao pin D1, high frequency
+                <NRF_PSEL(SPIM_MISO, 0, 3)>;
+        };
+    };
+
+    spi0_sleep: spi0_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 28)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 3)>,
+                <NRF_PSEL(SPIM_MISO, 0, 3)>;
+            low-power-enable;
+        };
+    };
+};
+
+/*
+SCK - D2
+SDIO (MISO/MOSI) - D1
+nCS - D4
+Mot (irq) - D5
+*/
+
+&spi0 {
+    status = "okay";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&xiao_d 4 GPIO_ACTIVE_LOW>;
+
+    trackball0: trackball0@0 {
+        status = "okay";
+        compatible = "pixart,pmw3610";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        cpi = <600>; //400, 800, 1200, 1600
+        // swap-xy; /* optional */
+        // invert-x; /* optional */
+        // invert-y; /* optional */
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+
+        force-awake;
+        /* keep the sensor awake while ZMK activity state is ACTIVE,
+           fallback to normal downshift mode after ZMK goes into IDLE / SLEEP mode.
+           thus, the sensor would be a `wakeup-source` */
+
+        force-awake-4ms-mode;
+        /* while force-awake is acitvated, enable this mode to force sampling per 
+           4ms, where the default sampling rate is 8ms. */
+        /* NOTE: apply this mode if you need 250Hz with direct USB connection. */
+    };
+};
+
+/*
+&pointer_accel {
+    // https://github.com/oleksandrmaslov/zmk-pointing-acceleration
+    
+    input-type = <INPUT_EV_REL>;  // For relative input devices
+    track-remainders;             // Accumulate fractional movements
+    min-factor = <300>;          // 0.8x at very slow speeds
+    max-factor = <1000>;         // 3.0x at fast speeds
+    speed-threshold = <100>;     // counts/sec for 1x
+    speed-max = <4000>;          // 6000 counts/sec for max accel
+    acceleration-exponent = <2>;  // Quadratic acceleration curve
+};
+*/
+
+/ {
+    trackball0_listener: trackball0_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&trackball0>;
+        input-processors = <
+            /*
+            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+            */
+            &pointer_accel
+            &zip_temp_layer 1 500
+	    	/*
+            &zip_xy_scaler 2 1> // multiplier / divisor scaling
+	    	&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+            */
+	    >;
+    };
+};

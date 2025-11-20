@@ -1,0 +1,10 @@
+file_format: "1"
+id: trackball
+name: Trackball
+type: shield
+url: https://github.com/jgreel/
+requires:
+  - seeeduino_xiao_ble
+  - pmw3610
+features:
+  - mouse
