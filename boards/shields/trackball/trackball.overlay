@@ -87,7 +87,6 @@ Mot (irq) - D5
             /*
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
             */
-            &pointer_accel
             &zip_temp_layer 1 500
 	    	/*
             &zip_xy_scaler 2 1> // multiplier / divisor scaling
