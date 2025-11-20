@@ -34,9 +34,9 @@ manifest:
     #- name: cirque-input-module
     #  remote: halfdane
     #  revision: absolute_mode
-    - name: zmk-pointing-acceleration
-      remote: oleksandrmaslov
-      revision: fixed
+    #- name: zmk-pointing-acceleration
+    #  remote: oleksandrmaslov
+    #  revision: fixed
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: main
